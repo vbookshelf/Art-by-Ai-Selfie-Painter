@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>Art by Ai</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Use the power of Machine Learning to convert your selfie into art.">
+
+
+<!--Code to prevent the browser from caching the page-->
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+
+
+
+
+
+<!--CSS Stylesheets-->
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/art.css">
+
+<!--Link to Font Awesome icons-->
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.4.2/css/all.css' integrity='sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns' crossorigin='anonymous'>
+
+<!--Link to fonts from google fonts-->
+<link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet">
+
+
+<link rel="shortcut icon" type="image/png" href="robotfavicon.png">
+
+
+
+
+<style>
+html,body,h2,h3,h4 {font-family: Helvetica, sans-serif}
+</style>
+
+
+</head>
+
+
+<body class="w3-pale-blue">
+
+
+
+<!-- w3-content defines a container for fixed size centered content,
+and is wrapped around the whole page content. -->
+<div class="w3-content card" style="max-width:960px">
+
+
+
+<!-- 1. HOME PAGE TAB -->
+<div class="tabbed w3-animate-opacity w3-white" id="home">
+
+
+
+<!-- Header -->
+<div class="w3-center title adjust-fontcolor logo">
+	
+  <h1 class="space-letters w3-text-purple"><i class="fas fa-paint-brush w3-padding" style="font-size:40px;color:red"></i><b>Selfie Painter</b></h1>
+  
+  <h5 class="space-letters tag-font w3-text-red"><b>powered by<br> Artificial Intelligence</b></h5>
+</div>
+
+
+
+
+<!-- Front page image -->
+<!-- This image will be replaced once the js code runs. -->
+
+
+<div class="w3-center">
+	
+	<!-- HIDDEN TAG. 
+	When the user submits an image this is where it goes first.
+	This is the img tag that the model reads from. For best results
+	it should not reduce the input image size in any way. -->
+	<div class="hide">
+	<img id="selected-image" class="w3-round" src="assets/girl_resized.jpg"  alt="">
+	</div>
+	
+	
+	<div>
+		
+	<!-- LEFT IMAGE - Style Image -->
+	<img id="style-image" class="w3-round" src="assets/style_image_small.jpg"  width="300" height="250"alt="">
+
+
+	<!-- This is the canvas where the model prediction is displayed. -->
+	<!-- MIDDLE IMAGE - Art Image-->
+	<canvas id="myCanvas2" class="w3-round w3-margin w3-border" width="240" height="320"
+	style="">
+	Sorry. Your browser does not support the HTML5 canvas tag.</canvas>
+	
+	
+	<!-- RIGHT IMAGE - Content Image 
+	This is where the original image that the user submits gets displayed.-->
+	<img id="content-image" class="w3-round" src="assets/girl_resized.jpg"  width="240" height="320" alt="">
+	
+	</div>
+	
+	
+	
+</div> 
+
+
+
+
+<div class="w3-center">
+	<div class="progress-bar w3-text-teal">Model is Loading...</div>
+</div>
+
+
+<div class="w3-center add-padding w3-border add-margin side-margin w3-round w3-pale-blue">
+		
+	<h5 class='new-font'></h5>
+	<ol class='w3-left-align' id='prediction-list'></ol>
+		
+</div>
+
+
+<!-- Button -->
+<div id="btnn" class="w3-center bottom-padding">
+	
+	<button class="w3-btn w3-purple w3-round w3-margin-bottom adjust-spacing w3-hover-red btn-font w3-padding w3-space-letters w3-card-4" onclick="setTimeout(simulateClick.bind(null, 'image-selector'), 200)"><i class='fas fa-camera w3-padding-right' style='font-size:15px'></i><b>Submit your Selfie</b></button>
+	
+</div> 
+
+
+
+
+
+
+
+<div class='w3-padding'>
+	<p class='w3-round w3-margin w3-margin-bottom w3-text-teal'>Please Note: This is a prototype.</p>
+</div>
+
+
+</div><!--END OF HOME PAGE TAB-->
+
+
+
+<!-- We simulate clicks on these two. -->
+<div class="hide">
+	<button id='predict-button'>Predict</button>
+</div>
+
+<div class="hide">
+	<input id="image-selector" type="file">
+</div>
+<!--===================================-->
+
+
+	<!-- Load jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+
+	</script>
+	<!-- Load TensorFlow.js -->
+	
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.13.3/dist/tf.min.js">
+		
+	</script>
+	
+	<!-- NOTE:
+	Change the predict.js file name (change the number) each time you modify the predict.js file.
+	This will force the browser to load the latest predict.js and not load
+	the predict.js file that is in the user's cache.
+	There is a stackoverflow soulution that says to add a version to the js file. 
+	But it could be that some browsers can ignore the version. Therefore I think
+	it's safer to change the js file name.-->
+	<!--<script src="jscript/predict.js"></script> -->
+	<script src="jscript/predict_small.js"></script>
+	
+	
+</div> <!-- w3-content -->
+
+</body>
+</html>
+
