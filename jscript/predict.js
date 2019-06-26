@@ -78,13 +78,13 @@ $("#image-selector").change(function () {
 let model;
 (async function () {
 	
-	model = await tf.loadModel('http://art.test.woza.work/model_50/model.json');
+	model = await tf.loadModel('http://paint.test.woza.work/model_107/model.json');
 	
 	
 	
-	$("#selected-image").attr("src", "http://art.test.woza.work/assets/girl_resized.jpg")
+	$("#selected-image").attr("src", "http://paint.test.woza.work/assets/girl_resized.jpg")
 	
-	console.log('model_50');
+	console.log('model_107');
 	
 	
 	// Hide the model loading spinner
@@ -127,7 +127,7 @@ $("#predict-button").click(async function () {
 	
 	// Pre-process the image
 	let tensor = tf.fromPixels(image)
-	.resizeNearestNeighbor([400,300]) // change the image size here
+	.resizeNearestNeighbor([400,400]) // change the image size here
 	//.toFloat()
 	//.div(tf.scalar(255.0))
 	.expandDims();
@@ -190,7 +190,7 @@ $("#predict-button").click(async function () {
 	
 	
 	// reshape the pred tensor
-	rgb_tensor = pred_tensor.reshape([400,300,3]);
+	rgb_tensor = pred_tensor.reshape([400,400,3]);
 	
 	
 	
