@@ -16,7 +16,7 @@ This is a prototype for an online tool that can take as input a portrait photo o
 
 The image on the left is the style image that was used in the neural style transfer algorithm.
 
-The process used to build and train the model is described in this Kaggle kernel:
+The process used to build and train the model is described in this Kaggle kernel:<br>
 https://www.kaggle.com/vbookshelf/art-by-ai-selfie-painter-web-app
 
 These are the two datasets that were used to train the model:
