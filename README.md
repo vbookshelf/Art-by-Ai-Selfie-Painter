@@ -12,7 +12,7 @@ Live Web App: http://art.test.woza.work/
 
 
 
-This is a prototype for an online tool that can take as input a portrait photo of a person and output an art image. In order to build this app I first had to create a dataset of 10,200 art images using a neural style transfer alogorithm. 
+This is a prototype for an online tool that can take as input a portrait photo of a person and output an art image. In order to build this app I first had to create a dataset of 10,200 art images using a neural style transfer algorithm. The data was then used to train a U-Net cnn.
 
 The image on the left is the style image that was used in the neural style transfer algorithm.
 
