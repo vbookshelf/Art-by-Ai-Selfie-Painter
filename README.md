@@ -1,6 +1,6 @@
 ## Art-by-Ai-Selfie-Painter
 
-Live Web App: http://art.test.woza.work/
+Live Web App: 
 
 
 <br>
