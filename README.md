@@ -5,7 +5,7 @@ Live Web App: http://art.test.woza.work/
 
 <br>
 
-<img src="http://art.test.woza.work/assets/selfiepainter.png" width="700"></img>
+<img src="http://paint.test.woza.work/assets/selfiepainter.png" width="700"></img>
 
 <br>
 
