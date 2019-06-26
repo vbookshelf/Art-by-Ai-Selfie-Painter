@@ -24,7 +24,7 @@ These are the two datasets that were used to train the model:
 - Art by Ai - Neural Style Transfer<br>
 https://www.kaggle.com/vbookshelf/art-by-ai-neural-style-transfer
 
-- AISegment.com - Matting Human Datasets
+- AISegment.com - Matting Human Datasets<br>
 https://www.kaggle.com/laurentmih/aisegmentcom-matting-human-datasets
 
 
